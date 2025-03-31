@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, Dimensions, SafeAreaView } from 'react-native';
 import { Ionicons, MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
+import { router } from 'expo-router';
+import * as SecureStore from 'expo-secure-store';
 
 const { width } = Dimensions.get('window');
 
 export default function HomeScreen() {
+  useEffect(() => {
+    checkAuth();
+  }, []);
+
+  const checkAuth = async () => {
+    try {
+      const token = await SecureStore.getItemAsync('userToken');
+      if (!token) {
+        // 如果没有token，跳转到登录页
+        router.replace('/login');
+      }
+    } catch (error) {
+      console.error('验证token失败:', error);
+      router.replace('/login');
+    }
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       {/* 顶部导航栏 */}
