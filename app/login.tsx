@@ -57,7 +57,7 @@ export default function LoginScreen() {
           {/* 返回按钮和帮助按钮 */}
           <View style={styles.header}>
             <TouchableOpacity>
-              {/* <MaterialCommunityIcons name="arrow-left" size={24} color="#333" /> */}
+              <MaterialCommunityIcons name="arrow-left" size={24} color="#333" />
             </TouchableOpacity>
             <TouchableOpacity>
               <Text style={styles.helpText}>帮助</Text>
