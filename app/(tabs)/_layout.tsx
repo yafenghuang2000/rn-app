@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tabs } from 'expo-router';
 import { Image } from 'react-native';
-import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function TabLayout() {
   return (
@@ -9,16 +9,18 @@ export default function TabLayout() {
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: '#ff6700',
-        tabBarInactiveTintColor: '#666',
+        tabBarInactiveTintColor: '#999',
         tabBarStyle: {
           backgroundColor: '#fff',
-          borderTopColor: '#eee',
-          height: "auto",
-          paddingBottom: 4,
+          borderTopColor: '#f0f0f0',
+          height: 70,
+          paddingBottom: 0,
+          paddingTop: 2,
         },
         tabBarLabelStyle: {
           fontSize: 10,
-          marginTop: 0,
+          marginTop: 1,
+          marginBottom: 3,
         },
       }}>
       <Tabs.Screen
@@ -28,7 +30,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color, focused }) => (
             <MaterialCommunityIcons 
               name={focused ? "home" : "home-outline"} 
-              size={24} 
+              size={20} 
               color={color} 
             />
           ),
@@ -40,8 +42,8 @@ export default function TabLayout() {
           title: '分类',
           tabBarIcon: ({ color, focused }) => (
             <MaterialCommunityIcons 
-              name={focused ? "menu" : "menu"} 
-              size={24} 
+              name="text-box-search-outline" 
+              size={20} 
               color={color} 
             />
           ),
@@ -54,7 +56,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color, focused }) => (
             <MaterialCommunityIcons 
               name={focused ? "heart" : "heart-outline"} 
-              size={24} 
+              size={20} 
               color={color} 
             />
           ),
@@ -66,8 +68,8 @@ export default function TabLayout() {
           title: '购物车',
           tabBarIcon: ({ color, focused }) => (
             <MaterialCommunityIcons 
-              name={focused ? "cart" : "cart-outline"} 
-              size={24} 
+              name={focused ? "shopping" : "shopping-outline"} 
+              size={20} 
               color={color} 
             />
           ),
@@ -79,8 +81,8 @@ export default function TabLayout() {
           title: '我的',
           tabBarIcon: ({ color, focused }) => (
             <MaterialCommunityIcons 
-              name={focused ? "account" : "account-outline"} 
-              size={24} 
+              name={focused ? "account-circle" : "account-circle-outline"} 
+              size={20} 
               color={color} 
             />
           ),

@@ -20,7 +20,7 @@ export default function HomeScreen() {
       }
     } catch (error) {
       console.error('验证token失败:', error);
-      router.replace('/login');
+      // router.replace('/login');
     }
   };
 
